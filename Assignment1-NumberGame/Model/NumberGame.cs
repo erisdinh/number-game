@@ -6,36 +6,36 @@ using System.Threading.Tasks;
 
 namespace Assignment1_NumberGame.Model {
     class NumberGame {
-        NumberList numberList;
-        int round;
-        GameResult gameResult;
-        Range range;
+        NumberList _numberList;
+        int _round;
+        GameResult _gameResult;
+        Range _range;
 
         public NumberGame() {
-            range = new Range(0,9);
-            round = 1;
-            numberList = new NumberList(range);
-            gameResult = new GameResult();
+            _range = new Range(0,9);
+            _round = 1;
+            _numberList = new NumberList(_range);
+            _gameResult = new GameResult();
         }
 
         public int GetRound() {
-            return round;
+            return _round;
         }
 
         public void StartNewGame() {
-            round = 0;
-            gameResult = new GameResult();
+            _round = 0;
+            _gameResult = new GameResult();
         }
 
         public int[] PlayRound() {
-            round += 1;
-            int[] numbers = numberList.Fill();
+            _round += 1;
+            int[] numbers = _numberList.Fill();
             return numbers;
         }
 
         public int CalculateRoundScore() {
             int roundScore = 0;
-            int[] frequency = numberList.calculateFrequency();
+            int[] frequency = _numberList.calculateFrequency();
 
             for (int i = 0; i < frequency.Length; i++) {
                 switch (frequency[i]) {
@@ -58,17 +58,17 @@ namespace Assignment1_NumberGame.Model {
 
         public GameResult GenerateGameResult(int totalScore) {
             if (totalScore > 100) {
-                gameResult = GameResult.PLAYER_WON;
+                _gameResult = GameResult.PLAYER_WON;
             } else if (totalScore < 100) {
-                gameResult = GameResult.PLAYER_LOST;
+                _gameResult = GameResult.PLAYER_LOST;
             } else {
-                gameResult = GameResult.GAME_DRAW;
+                _gameResult = GameResult.GAME_DRAW;
             }
-            return gameResult;
+            return _gameResult;
         }
 
         public bool IsGameOver() {
-            if (round == 5) {
+            if (_round == 5) {
                 return true;
             } else {
                 return false;
