@@ -1,0 +1,10 @@
+E:\GitHub\number-game\Assignment1-NumberGame\bin\Debug\Assignment1-NumberGame.exe.config
+E:\GitHub\number-game\Assignment1-NumberGame\bin\Debug\Assignment1-NumberGame.exe
+E:\GitHub\number-game\Assignment1-NumberGame\bin\Debug\Assignment1-NumberGame.pdb
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.csprojAssemblyReference.cache
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1_NumberGame.NumberGameForm.resources
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1_NumberGame.Properties.Resources.resources
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.csproj.GenerateResource.cache
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.csproj.CoreCompileInputs.cache
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.exe
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.pdb

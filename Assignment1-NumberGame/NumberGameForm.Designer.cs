@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.label1 = new System.Windows.Forms.Label();
-            this.labelNumber0 = new System.Windows.Forms.Label();
             this.labelNumber1 = new System.Windows.Forms.Label();
             this.labelNumber2 = new System.Windows.Forms.Label();
             this.labelNumber3 = new System.Windows.Forms.Label();
@@ -36,6 +35,10 @@
             this.labelRoundScore = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelTotalScore = new System.Windows.Forms.Label();
+            this.labelNumber0 = new System.Windows.Forms.Label();
+            this.groupLabelNumber = new System.Windows.Forms.GroupBox();
+            this.labelResult = new System.Windows.Forms.Label();
+            this.groupLabelNumber.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -48,45 +51,49 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "NUMBER GAME";
             // 
-            // labelNumber0
-            // 
-            this.labelNumber0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumber0.Location = new System.Drawing.Point(12, 121);
-            this.labelNumber0.Name = "labelNumber0";
-            this.labelNumber0.Size = new System.Drawing.Size(128, 136);
-            this.labelNumber0.TabIndex = 0;
-            // 
             // labelNumber1
             // 
             this.labelNumber1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumber1.Location = new System.Drawing.Point(146, 121);
+            this.labelNumber1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelNumber1.Location = new System.Drawing.Point(134, 20);
             this.labelNumber1.Name = "labelNumber1";
             this.labelNumber1.Size = new System.Drawing.Size(128, 136);
             this.labelNumber1.TabIndex = 1;
+            this.labelNumber1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNumber2
             // 
             this.labelNumber2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumber2.Location = new System.Drawing.Point(280, 121);
+            this.labelNumber2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelNumber2.Location = new System.Drawing.Point(268, 20);
             this.labelNumber2.Name = "labelNumber2";
             this.labelNumber2.Size = new System.Drawing.Size(128, 136);
             this.labelNumber2.TabIndex = 2;
+            this.labelNumber2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNumber3
             // 
             this.labelNumber3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumber3.Location = new System.Drawing.Point(414, 121);
+            this.labelNumber3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelNumber3.Location = new System.Drawing.Point(402, 20);
             this.labelNumber3.Name = "labelNumber3";
             this.labelNumber3.Size = new System.Drawing.Size(128, 136);
             this.labelNumber3.TabIndex = 3;
+            this.labelNumber3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNumber4
             // 
             this.labelNumber4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumber4.Location = new System.Drawing.Point(548, 121);
+            this.labelNumber4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelNumber4.Location = new System.Drawing.Point(536, 20);
             this.labelNumber4.Name = "labelNumber4";
             this.labelNumber4.Size = new System.Drawing.Size(128, 136);
             this.labelNumber4.TabIndex = 4;
+            this.labelNumber4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonPlay
             // 
@@ -96,6 +103,7 @@
             this.buttonPlay.TabIndex = 5;
             this.buttonPlay.Text = "New Game";
             this.buttonPlay.UseVisualStyleBackColor = true;
+            this.buttonPlay.Click += new System.EventHandler(this.ButtonPlay_Click);
             // 
             // label2
             // 
@@ -156,11 +164,45 @@
             this.labelTotalScore.TabIndex = 11;
             this.labelTotalScore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // labelNumber0
+            // 
+            this.labelNumber0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelNumber0.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelNumber0.Location = new System.Drawing.Point(0, 20);
+            this.labelNumber0.Name = "labelNumber0";
+            this.labelNumber0.Size = new System.Drawing.Size(128, 136);
+            this.labelNumber0.TabIndex = 0;
+            this.labelNumber0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupLabelNumber
+            // 
+            this.groupLabelNumber.Controls.Add(this.labelNumber0);
+            this.groupLabelNumber.Controls.Add(this.labelNumber1);
+            this.groupLabelNumber.Controls.Add(this.labelNumber2);
+            this.groupLabelNumber.Controls.Add(this.labelNumber3);
+            this.groupLabelNumber.Controls.Add(this.labelNumber4);
+            this.groupLabelNumber.Location = new System.Drawing.Point(12, 98);
+            this.groupLabelNumber.Name = "groupLabelNumber";
+            this.groupLabelNumber.Size = new System.Drawing.Size(664, 176);
+            this.groupLabelNumber.TabIndex = 13;
+            this.groupLabelNumber.TabStop = false;
+            // 
+            // labelResult
+            // 
+            this.labelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.ForeColor = System.Drawing.Color.Red;
+            this.labelResult.Location = new System.Drawing.Point(143, 391);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(399, 39);
+            this.labelResult.TabIndex = 14;
+            // 
             // NumberGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 393);
+            this.ClientSize = new System.Drawing.Size(688, 452);
+            this.Controls.Add(this.labelResult);
             this.Controls.Add(this.labelTotalScore);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelRoundScore);
@@ -168,14 +210,11 @@
             this.Controls.Add(this.labelRound);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonPlay);
-            this.Controls.Add(this.labelNumber4);
-            this.Controls.Add(this.labelNumber3);
-            this.Controls.Add(this.labelNumber2);
-            this.Controls.Add(this.labelNumber1);
-            this.Controls.Add(this.labelNumber0);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupLabelNumber);
             this.Name = "NumberGameForm";
             this.Text = "Number Game";
+            this.groupLabelNumber.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +223,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelNumber0;
         private System.Windows.Forms.Label labelNumber1;
         private System.Windows.Forms.Label labelNumber2;
         private System.Windows.Forms.Label labelNumber3;
@@ -196,6 +234,9 @@
         private System.Windows.Forms.Label labelRoundScore;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelTotalScore;
+        private System.Windows.Forms.Label labelNumber0;
+        private System.Windows.Forms.GroupBox groupLabelNumber;
+        private System.Windows.Forms.Label labelResult;
     }
 }
 

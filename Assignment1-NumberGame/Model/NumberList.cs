@@ -10,16 +10,17 @@ namespace Assignment1_NumberGame.Model {
         Range range;
         private int[] numbers;
 
-        public NumberList(int[] numbers, Range range) {
-            this.numbers = numbers;
+        public NumberList(Range range) {
             this.range = range;
+            numbers = new int[5];
         }
 
-        public void Fill() {
+        public int[] Fill() {
             Random random = new Random();
             for (int i = 0; i < numbers.Length; i++) {
                 numbers[i] = random.Next(range.GetLowerBound(), range.GetUpperBound() + 1);
             }
+            return numbers;
         }
 
         public int[] calculateFrequency() {
