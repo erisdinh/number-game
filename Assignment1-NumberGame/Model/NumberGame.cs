@@ -5,15 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Assignment1_NumberGame.Model {
-    class NumberGame {
-        NumberList _numberList;
+    public class NumberGame {
         int _round;
-        GameResult _gameResult;
+        int[] _roundScore;
+        int _totalScore;
         Range _range;
+        NumberList _numberList;
+        GameResult _gameResult;
 
-        public NumberGame() {
-            _range = new Range(0,9);
-            _round = 1;
+        public NumberGame() { }
+
+        public NumberGame(int lBound, int uBound) {
+            _round = 0;
+            _roundScore = new int[5];
+            _totalScore = 0;
+            _range = new Range(lBound, uBound);
             _numberList = new NumberList(_range);
             _gameResult = new GameResult();
         }
@@ -22,20 +28,31 @@ namespace Assignment1_NumberGame.Model {
             return _round;
         }
 
+        public int[] GetRoundScore() {
+            return _roundScore;
+        }
+
+        public int GetTotalScore() {
+            return _totalScore;
+        }
+
         public void StartNewGame() {
             _round = 0;
+            _roundScore = new int[5];
+            _totalScore = 0;
+            _numberList = new NumberList(_range);
             _gameResult = new GameResult();
         }
 
         public int[] PlayRound() {
-            _round += 1;
             int[] numbers = _numberList.Fill();
+            CalculateRoundScore();
             return numbers;
         }
 
-        public int CalculateRoundScore() {
+        public void CalculateRoundScore() {
             int roundScore = 0;
-            int[] frequency = _numberList.calculateFrequency();
+            int[] frequency = _numberList.CalculateFrequency();
 
             for (int i = 0; i < frequency.Length; i++) {
                 switch (frequency[i]) {
@@ -53,7 +70,9 @@ namespace Assignment1_NumberGame.Model {
                         break;
                 }
             }
-            return roundScore;
+
+            _roundScore[_round] = roundScore;
+            _totalScore += roundScore;
         }
 
         public GameResult GenerateGameResult(int totalScore) {
@@ -68,9 +87,10 @@ namespace Assignment1_NumberGame.Model {
         }
 
         public bool IsGameOver() {
-            if (_round == 5) {
+            if (_round == 4) {
                 return true;
             } else {
+                _round++;
                 return false;
             }
         }

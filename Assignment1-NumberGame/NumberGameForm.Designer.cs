@@ -37,7 +37,6 @@
             this.labelTotalScore = new System.Windows.Forms.Label();
             this.labelNumber0 = new System.Windows.Forms.Label();
             this.groupLabelNumber = new System.Windows.Forms.GroupBox();
-            this.labelResult = new System.Windows.Forms.Label();
             this.groupLabelNumber.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,7 +138,7 @@
             this.labelRoundScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRoundScore.Location = new System.Drawing.Point(159, 351);
             this.labelRoundScore.Name = "labelRoundScore";
-            this.labelRoundScore.Size = new System.Drawing.Size(66, 23);
+            this.labelRoundScore.Size = new System.Drawing.Size(66, 22);
             this.labelRoundScore.TabIndex = 9;
             this.labelRoundScore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -188,21 +187,11 @@
             this.groupLabelNumber.TabIndex = 13;
             this.groupLabelNumber.TabStop = false;
             // 
-            // labelResult
-            // 
-            this.labelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResult.ForeColor = System.Drawing.Color.Red;
-            this.labelResult.Location = new System.Drawing.Point(143, 391);
-            this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(399, 39);
-            this.labelResult.TabIndex = 14;
-            // 
             // NumberGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 452);
-            this.Controls.Add(this.labelResult);
+            this.ClientSize = new System.Drawing.Size(688, 403);
             this.Controls.Add(this.labelTotalScore);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelRoundScore);
@@ -236,7 +225,6 @@
         private System.Windows.Forms.Label labelTotalScore;
         private System.Windows.Forms.Label labelNumber0;
         private System.Windows.Forms.GroupBox groupLabelNumber;
-        private System.Windows.Forms.Label labelResult;
     }
 }
 

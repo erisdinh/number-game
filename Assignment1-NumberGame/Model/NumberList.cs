@@ -23,7 +23,7 @@ namespace Assignment1_NumberGame.Model {
             return _numbers;
         }
 
-        public int[] calculateFrequency() {
+        public int[] CalculateFrequency() {
             int[] frequency = new int[10];
 
             for (int i = 0; i < _numbers.Length; i++) {
