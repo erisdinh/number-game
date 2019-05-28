@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Assignment1_NumberGame.Model;
+using GameLibrary.Model;
 
-namespace Assignment1_NumberGame {
+namespace NumberGame_WindowForm {
     public partial class ResultForm : Form {
 
         NumberGame game = new NumberGame();
@@ -20,16 +20,21 @@ namespace Assignment1_NumberGame {
 
         private void ResultForm_Load(object sender, EventArgs e) {
 
-            int[] roundScore = game.GetRoundScore();
+            // Get and show round and total scores on the ResultForm
+            int[] roundScore = game.RoundScore;
 
             for(int i = 0; i < panelRoundScore.Controls.Count; i++) {
                 panelRoundScore.Controls[i].Text = roundScore[i].ToString();
             }
 
-            labelTotalScore.Text = game.GetTotalScore().ToString();
+            labelTotalScore.Text = game.TotalScore.ToString();
 
-            GameResult gameResult = game.GenerateGameResult(game.GetTotalScore());
+            // Generate the game result
+            game.GenerateGameResult();
 
+            GameResult gameResult = game.Result;
+
+            // Decide the result statement
             switch (gameResult) {
                 case GameResult.PLAYER_WON:
                     labelResult.Text = "Congratulation! You won!";
@@ -38,7 +43,7 @@ namespace Assignment1_NumberGame {
                     labelResult.Text = "You lose!!!!";
                     break;
                 case GameResult.GAME_DRAW:
-                    labelResult.Text = "Congratulation! You got DRAWWWW!!!";
+                    labelResult.Text = "This game is a draw";
                     break;
             }
         }

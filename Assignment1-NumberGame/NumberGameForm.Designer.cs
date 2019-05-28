@@ -1,4 +1,4 @@
-﻿namespace Assignment1_NumberGame {
+﻿namespace NumberGame_WindowForm {
     partial class NumberGameForm {
         /// <summary>
         /// Required designer variable.

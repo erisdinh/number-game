@@ -9,3 +9,7 @@ E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.cs
 E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.exe
 E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.pdb
 E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1_NumberGame.ResultForm.resources
+E:\GitHub\number-game\Assignment1-NumberGame\bin\Debug\Assignment1-NumberGame.exe.manifest
+E:\GitHub\number-game\Assignment1-NumberGame\bin\Debug\Assignment1-NumberGame.application
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.exe.manifest
+E:\GitHub\number-game\Assignment1-NumberGame\obj\Debug\Assignment1-NumberGame.application

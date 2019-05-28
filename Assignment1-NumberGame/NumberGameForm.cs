@@ -7,38 +7,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Assignment1_NumberGame.Model;
+using GameLibrary.Model;
 
-namespace Assignment1_NumberGame {
+namespace NumberGame_WindowForm {
     public partial class NumberGameForm : Form {
 
         NumberGame game;
+        NumberList numberList;
 
         public NumberGameForm() {
             InitializeComponent();
             game = new NumberGame(0,9);
-
+            numberList = new NumberList();
         }
 
         private void ButtonPlay_Click(object sender, EventArgs e) {
+
+            // Check the text in buttonPlay
+            // If it is "New Game", set up a new game for the player
             if (buttonPlay.Text.Equals("New Game")) {
                 game.StartNewGame();
             }
 
-            int[] numbers = game.PlayRound();
-            labelRound.Text = (game.GetRound()+1).ToString();
+            // Play new round
+            game.PlayRound();
 
-            for (int i = 0; i < numbers.Length; i++) {
+            // Update the round label in NumberGameForm
+            labelRound.Text = (game.Round).ToString();
+
+            // Retrieve number list
+            numberList = game.NumberList;
+            int[] numbers = numberList.Numbers;
+
+            // Show number list on NumberGameForm
+            for (int i = 0; i < numberList.Numbers.Length; i++) {
                 groupLabelNumber.Controls[i].Text = numbers[i].ToString();
             }
 
-            int roundScore = game.GetRoundScore()[game.GetRound()];
+            // Get the current round and total score
+            int roundScore = game.RoundScore[game.Round-1];
             labelRoundScore.Text = roundScore.ToString();
+            labelTotalScore.Text = game.TotalScore.ToString();
 
-            labelTotalScore.Text = game.GetTotalScore().ToString();
-
+            // Check whether the game is over (after 5 rounds)
             bool gameOver = game.IsGameOver();
 
+            // If the game is over, change the text of buttonPlay to "New Game" and show the ResultForm
+            // Otherwise, change buttonPlay to "New Round" as play a new round
             if (gameOver) {
                 buttonPlay.Text = "New Game";
 
